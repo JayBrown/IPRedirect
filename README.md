@@ -8,4 +8,6 @@
 
 Install the userscript with e.g. [**Tampermonkey**](http://tampermonkey.net).
 
-The script presupposes that your localhost IPFS port has been set to the default 8080. If not, you need to manually edit the relevant line in the script.
+The script will test, if your IPFS node is running. If not, it will not redirect, and instead open the URL as is.
+
+The script presupposes that your localhost IPFS port has been set to 8080. If not, you need to manually edit the port number in line 15 of the script.
