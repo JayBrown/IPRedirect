@@ -1,12 +1,12 @@
 // ==UserScript==
 // @name         IPRedirect
 // @namespace    JayBrown
-// @version      1.0
-// @description  JavaScript to redirect IPFS URLs to localhost
-// @author       Joss Brown, NeoTeo, loadletter
+// @version      1.0.1
+// @description  Interplanetary Redirect: JavaScript to redirect IPFS & IPNS addresses to localhost in the browser
+// @author       Joss Brown
 // @match        *://*/ipfs/*
 // @match        *://*/ipns/*
-// @exclude      http://localhost*
+// @exclude      *://localhost*
 // @grant        none
 // @run-at       document-start
 // ==/UserScript==
@@ -16,6 +16,9 @@ var matchURL = regExp.exec(window.location.toString());
 
 if (matchURL !== null && matchURL.length > 1) {
 
+    var ipfsPort = "8080";
+    var targetURL = "http://localhost:" + ipfsPort;
+
     // IPFS protocol
     var theProtocol = matchURL[1];
     ipProtocol = (theProtocol === null) ? "/ipfs/" : theProtocol;
@@ -23,10 +26,10 @@ if (matchURL !== null && matchURL.length > 1) {
     // IPFS hash
     var ipHash = matchURL[2];
     if (ipHash !== null) {
-        var newURL = "http://localhost:8080" + ipProtocol + ipHash;
+        var newURL = targetURL + ipProtocol + ipHash;
         window.location = newURL;
     }
 }
 
-// derived: https://github.com/NeoTeo/ipfs-catcher
-// informed: https://github.com/loadletter/ipfs-redirect-userscript
+// inspired by: https://github.com/NeoTeo/ipfs-catcher/blob/826eff1e89db42071355d2767bf21e89ded8aadf/ipfs-catcher.safariextension/startscript.js
+// informed by: https://github.com/loadletter/ipfs-redirect-userscript/issues/1
