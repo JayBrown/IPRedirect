@@ -3,7 +3,7 @@
 // @downloadURL  https://raw.githubusercontent.com/JayBrown/IPRedirect/master/IPRedirect.js
 // @updateURL    https://raw.githubusercontent.com/JayBrown/IPRedirect/master/IPRedirect.meta.js
 // @namespace    https://github.com/JayBrown
-// @version      1.1.1
+// @version      1.2.0
 // @description  Interplanetary Redirect: JavaScript to redirect IPFS & IPNS addresses to localhost in the browser
 // @author       Joss Brown
 // @match        *://*/ipfs/*
