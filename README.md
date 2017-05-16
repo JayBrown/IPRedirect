@@ -13,3 +13,5 @@ The script presupposes that your localhost IPFS port has been set to 8080. If no
 The script determines, if your IPFS node is running. If not, it won't redirect, and instead open the URL as is.
 
 You will need at least **ipfs v0.4.9** for redirects to work on e.g. the [snapshot of the **Turkish Wikipedia**](https://ipfs.io/ipns/QmVH1VzGBydSfmNG7rmdDjAeBZ71UVeEahVbNpFQtwZK8W/wiki/Anasayfa.html).
+
+You should also keep an eye on the evolving [IPFS browser extensions project](https://github.com/ipfs/in-web-browsers); a userscript solution like this is only necessary, as long as no full-fledged browser extensions have been released.
